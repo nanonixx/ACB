@@ -36,23 +36,45 @@ public class TeamController {
 	}
 
 
-	public void showPlayers() throws SQLException{
 
+	public void createTeam() throws SQLException {
 		Statement st = connection.createStatement();
-		ResultSet rs;
 
-		System.out.print("Nom de l'equip: ");
-		String team = s.nextLine();
+		System.out.print("Nom de l'equip a crear: ");
+		String name = s.nextLine();
+		System.out.print("Tipus (National Team, Club): ");
+		String type = s.nextLine();
+		System.out.print("País de l'equip: ");
+		String country = s.nextLine();
+		System.out.print("Ciutat de l'equip");
+		String city = s.nextLine();
+		System.out.print("Nom del camp: ");
+		String court = s.nextLine();
 
-		rs = st.executeQuery("SELECT first_name, last_name FROM player WHERE team_name ='" + team + "';");
 
-		while (rs.next()) {
-			System.out.println("Name: " + rs.getString("first_name") + " " + rs.getString("last_name"));
-		}
+		st.executeUpdate("INSERT INTO team VALUES ('"+name+"', '"+type+"', '"+country+"', '"+city+"', '"+court+"');");
 
-		rs.close();
 		st.close();
+
 	}
 
-//	public void
+	public void createMatch() throws SQLException {
+		Statement st = connection.createStatement();
+
+		System.out.print("Equip local: ");
+		String home_team= s.nextLine();
+		System.out.print("Equip visitant: ");
+		String visitor_team = s.nextLine();
+		System.out.print("Data del partir: ");
+		String match_date = s.nextLine();
+		System.out.print("Audiencia: ");
+		String attendance = s.nextLine();
+		System.out.print("MVP: ");
+		String mvp = s.nextLine();
+
+
+		st.executeUpdate("INSERT INTO team VALUES ('"+home_team+"', '"+visitor_team+"', '"+match_date+"', '"+attendance+"', '"+mvp+"');");
+
+		st.close();
+	}
 }

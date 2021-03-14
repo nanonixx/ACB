@@ -38,31 +38,31 @@ public class ACBMain {
 				break;
 
 			case 2:
-				teamController.showPlayers();
+				playerController.showPlayers();
 				break;
 
 			case 3:
-				// Crea equip
+				teamController.createTeam();
 				break;
 
 			case 4:
-				// Crea jugador
+				playerController.createPlayer();
 				break;
 
 			case 5:
-				// Crea partit
+				teamController.createMatch();
 				break;
 
 			case 6:
-				// Mostra jugadors a un equip
+				playerController.showTeamlessPlayers();
 				break;
 
 			case 7:
-				// Assigna jugador a un equip
+				playerController.assignPlayer(); //TODO
 				break;
 
 			case 8:
-				// Desvincula jugador d'un equip
+				playerController.desvincular(); //TODO
 				break;
 
 			case 9:
