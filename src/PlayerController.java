@@ -93,6 +93,9 @@ public class PlayerController {
 		String federation_license_code  = s.nextLine();
 		System.out.print("Nou equip del jugador: ");
 		String team_name = s.nextLine();
+
+		st.executeUpdate("UPDATE player SET team_name = '" + team_name + "' WHERE federation_license_code = '" + federation_license_code + "'");
+		st.close();
 	}
 
 
@@ -101,6 +104,9 @@ public class PlayerController {
 
 		System.out.print("ID del jugador a desvincular: ");
 		String federation_license_code  = s.nextLine();
+
+		st.executeUpdate("UPDATE player SET team_name = NULL WHERE federation_license_code = '" + federation_license_code + "'");
+		st.close();
 
 	}
 }

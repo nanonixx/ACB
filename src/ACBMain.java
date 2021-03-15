@@ -58,15 +58,15 @@ public class ACBMain {
 				break;
 
 			case 7:
-				playerController.assignPlayer(); //TODO
+				playerController.assignPlayer();
 				break;
 
 			case 8:
-				playerController.desvincular(); //TODO
+				playerController.desvincular();
 				break;
 
 			case 9:
-				// Carrega estadístiques
+				teamController.stats();
 				break;
 
 			case 10:

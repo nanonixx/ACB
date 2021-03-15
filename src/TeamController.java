@@ -77,4 +77,41 @@ public class TeamController {
 
 		st.close();
 	}
+
+
+	public void stats() throws SQLException {
+		Statement st = connection.createStatement();
+
+		ResultSet rs;
+
+		rs = st.executeQuery("SELECT * FROM match_statistics");
+		while (rs.next()) {
+			System.out.println("Equip local: " + rs.getString("home_team") + " " +
+					"Equip visitant: " + rs.getString("visitor_team") + " " +
+					"Data del partit: " + rs.getString("match_date") + " " +
+					"ID jugador: " + rs.getString("player") + " " +
+					"Minuts jugats: " + rs.getString("minutes_played") + " " +
+					"Punts: " + rs.getString("points") + " " +
+					"Rebots ofensius: " + rs.getString("offensive_rebounds") + " " +
+					"Rebots defensius: " + rs.getString("defensive_rebounds") + " " +
+					"Assistències:  " + rs.getString("assists") + " " +
+					"Faltes comeses: " + rs.getString("committed_fouls") + " " +
+					"Faltes recebudes: " + rs.getString("received_fouls") + " " +
+					"Intents de tirs lliures: " + rs.getString("free_throw_attempts") + " " +
+					"Tirs lliures: " + rs.getString("free_throw_made") + " " +
+					"Intents de dos punts: " + rs.getString("two_point_attempts") + " " +
+					"Dos punts: " + rs.getString("two_point_made") + " " +
+					"Intents de triples: " + rs.getString("three_point_attempts") + " " +
+					"Triples: " + rs.getString("three_point_made") + " " +
+					"Bloqueigs: " + rs.getString("blocks") + " " +
+					"Vegades bloquejat: " + rs.getString("blocks_against") + " " +
+					"Intercepcions: " + rs.getString("steals") + " " +
+					"Turnovers: " + rs.getString("turnovers") + " " +
+					"Puntuació MVP: " + rs.getString("mvp_score"));
+		}
+
+		rs.close();
+		st.close();
+
+	}
 }
